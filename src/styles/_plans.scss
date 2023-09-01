@@ -11,19 +11,32 @@
         list-style: none;
         margin-top: 50px;
 
+        @media (max-width: 768px) {
+            display: block;
+
+            img {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            .button{
+                margin-top: 24px;
+            }
+        }
+
         &__item {
             text-align: center;
             padding: 60px 44px 44px;
             max-width: 380px;
             width: 100%;
 
-            &:nth-child(2){
+            &:nth-child(2) {
                 background-image: url(../images/fundo_combo_plus.png);
                 background-repeat: no-repeat;
                 background-size: contain;
             }
 
-            img{
+            img {
                 height: 83px;
             }
 
@@ -36,7 +49,7 @@
 
     }
 
-    p{
+    p {
         text-align: center;
     }
 }

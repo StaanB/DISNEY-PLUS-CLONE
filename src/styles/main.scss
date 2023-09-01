@@ -2,6 +2,10 @@
 @use 'hero';
 @use 'shows';
 @use 'plans';
+@use 'available-devices';
+@use 'faq';
+@use 'footer';
+@use 'header';
 
 @font-face {
     font-family: Avenir;
@@ -20,6 +24,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Avenir, sans-serif;
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
 }
 
 body {
@@ -40,14 +52,26 @@ body {
 
 .text--big {
     @include text(18px);
+
+    @media (max-width: 768px){
+        @include text(15px)
+    }
 }
 
 .text {
-    @include text
+    @include text;
+
+    @media (max-width: 768px){
+        @include text(14px)
+    }
 }
 
 .text--small {
-    @include text(12px)
+    @include text(12px);
+
+    @media (max-width: 768px){
+        @include text(11px)
+    }
 }
 
 .link-text {
@@ -57,15 +81,27 @@ body {
 }
 
 .title--big {
-    @include title(44px)
+    @include title(44px);
+
+    @media (max-width: 768px){
+        @include title(26px)
+    }
 }
 
 .title {
-    @include title
+    @include title;
+
+    @media (max-width: 768px){
+        @include title(24px)
+    }
 }
 
 .title--small {
-    @include title(28px)
+    @include title(28px);
+
+    @media (max-width: 768px){
+        @include title(22px)
+    }
 }
 
 .button {
@@ -78,6 +114,81 @@ body {
     border: none;
     text-transform: uppercase;
     border-radius: 4px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid #6421FF;
+
+    &:hover {
+        background-color: lighten(#6421FF, 3%);
+    }
+
+    &--secondary {
+        background-color: #0063e5;
+        border: 1px solid #0063e5;
+
+        &:hover {
+            background-color: lighten(#0063e5, 10%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(0, 0, 0, .8);
+        border: 1px solid variaveis.$corTextoSecundaria;
+
+        &:hover {
+            background-color: variaveis.$corTextoSecundaria;
+            color: variaveis.$corDeFundo;
+        }
+    }
+}
+
+.image-text-section {
+    padding: 5.6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    &__text_container {
+        padding: 0 0.2vw;
+
+        h2 {
+            margin-bottom: 24px;
+        }
+    }
+
+    &--image-full-width {
+        display: block;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        &__text_container {
+            position: absolute;
+            top: 0vw;
+            left: 50%;
+            height: 100%;
+            width: calc(50% - 5.6vw);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
+
+        }
+    }
 }
