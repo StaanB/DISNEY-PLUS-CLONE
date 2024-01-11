@@ -38,7 +38,7 @@ Tabela de conteúdos
 <p>• Uglify</p>
 <p>• Gulp</p>
 
-<h3><a href="#">⚖️LICENÇA</a></h3>
+<h3><a href="https://github.com/StaanB/DISNEY-PLUS-CLONE/blob/main/LICENSE">⚖️LICENÇA</a></h3>
 
 ### 🧑🏻Autor
 ---
